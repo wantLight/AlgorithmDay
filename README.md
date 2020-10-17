@@ -34,6 +34,12 @@ return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 
 
 
 ## 数组：
+动态规划：先考虑最简单的情况，从这里开始推移。
+
+ memo[i] 表示考虑抢劫 nums[i...n-1] 所能获得最大收益（不是说一定从 i 开始抢劫）
+ 先考虑最简单的情况 memo[n - 1] = nums[n - 1];
+ memo[i] 的取值在考虑抢劫 i 号房子和不考虑抢劫之间取最大值 
+ memo[i] = Math.max(nums[i] + (i + 2 >= n ? 0 : memo[i + 2]), nums[i + 1] + (i + 3 >= n ? 0 : memo[i + 3]));
 ### 15(leetcode.medium): 三数之和 (排序+双指针)
 
 ## 字符串：
