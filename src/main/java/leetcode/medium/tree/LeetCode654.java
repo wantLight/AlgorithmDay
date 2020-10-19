@@ -30,6 +30,7 @@ public class LeetCode654 {
             return null;
         }
         // 找出最大元素
+        // 对于构造二叉树的问题，根节点要做的就是把想办法把自己构造出来。
         int maxData = Integer.MIN_VALUE;
         int index = -1;
         for (int i = start; i <= end; i++) {

@@ -23,6 +23,7 @@ return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 
 ### 617(leetcode.simple):合并二叉树
 (先合并根节点,再递归合并左右子树)
 ### 654(leetcode.medium):最大二叉树
+对于构造二叉树的问题，根节点要做的就是把想办法把自己构造出来。
 终止条件：当l>r时，说明数组中已经没元素了，自然当前返回的节点为null。
 一次递归做了什么：找当前范围为[l,r]的数组中的最大值作为root节点，
 
@@ -40,6 +41,11 @@ return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 
  先考虑最简单的情况 memo[n - 1] = nums[n - 1];
  memo[i] 的取值在考虑抢劫 i 号房子和不考虑抢劫之间取最大值 
  memo[i] = Math.max(nums[i] + (i + 2 >= n ? 0 : memo[i + 2]), nums[i + 1] + (i + 3 >= n ? 0 : memo[i + 3]));
+
+
+### 40(leetcode.simple) 最小的k个数 （腾讯面试题）
+单边循环法 --- 快排切分 （根据下标j与k-1的大小关系来决定继续切分左段还是右段。）
+
 ### 15(leetcode.medium): 三数之和 (排序+双指针)
 
 ## 字符串：
