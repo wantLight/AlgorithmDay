@@ -1,5 +1,7 @@
 package leetcode.simple;
 
+import leetcode.hard.ListNode;
+
 /**
  * 求两链表的相交节点
  *

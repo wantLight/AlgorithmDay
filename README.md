@@ -25,10 +25,15 @@ return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 
 ### 654(leetcode.medium):最大二叉树
 终止条件：当l>r时，说明数组中已经没元素了，自然当前返回的节点为null。
 一次递归做了什么：找当前范围为[l,r]的数组中的最大值作为root节点，
-### 226(leetcode.simple):翻转二叉树（咋遍历都行，用TreeNode整体保存子树）
-## 链表：
-### 25(leetcode.Hard): K 个一组翻转链表 （递归/链表的反转）
+### 226(leetcode.simple):翻转二叉树
+（咋遍历都行，用TreeNode整体保存子树）
 
+
+## 链表：
+### 25(leetcode.Hard): K 个一组翻转链表 
+（递归/链表的反转）
+### 2(leetcode.medium):两数相加
+放一个数字代表进位
 
 
 单链表和双链表的反转（100%）
@@ -57,3 +62,4 @@ return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 
 (动态规划)
 ### 5(leetcode.medium):最长回文子串 
 （顺序遍历，定位中间重复部分的最后一个字符，再从中间向左右扩散）
+### 3(leetcode.medium):无重复字符的最长子串
