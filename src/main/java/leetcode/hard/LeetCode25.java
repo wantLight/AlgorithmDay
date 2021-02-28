@@ -12,7 +12,6 @@ package leetcode.hard;
  */
 public class LeetCode25 {
 
-
     public ListNode reverseKGroup(ListNode head, int k) {
         // 上个节点
         ListNode prev=null;
@@ -55,6 +54,23 @@ public class LeetCode25 {
             return cur;
         }
 
+    }
+
+
+
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode cur = head;
+        ListNode next = null;
+
+        while(cur != null){
+            next = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
+        }
+
+        return prev;
     }
 
     private ListNode reverseListedList(ListNode head){
