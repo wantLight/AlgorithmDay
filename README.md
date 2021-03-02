@@ -1,13 +1,18 @@
 2020.10.12开启每日刷题模式。这里记录每日刷题进展与代码目录情况~
 
 如果对时间复杂度的要求有 \loglog，通常都需要用到二分查找。
+动态规划：https://leetcode-cn.com/problems/fibonacci-number/solution/dong-tai-gui-hua-tao-lu-xiang-jie-by-labuladong/
+
 
 
 **数据结构的存储方式只有两种：数组（顺序存储）和链表（链式存储）。**
 
 ## 简单数字
-### 202(leetcode.simple):快乐数
-如果给定的数字最后会一直循环重复，那么快的指针（值）一定会追上慢的指针（值），也就是两者一定会相等。如果没有循环重复，那么最后快慢指针也会相等，且都等于1。
+### 202(leetcode.simple):快乐数 （快慢指针）
+slow=squareSum(slow);
+fast=squareSum(fast);fast=squareSum(fast);
+如果给定的数字最后会一直循环重复，那么快的指针（值）一定会追上慢的指针（值），也就是两者一定会相等。
+如果没有循环重复，那么最后快慢指针也会相等，且都等于1。
 
 ## 二叉树：
 前：根左右
@@ -43,10 +48,12 @@ return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 
 二叉搜索树的一个特性：通过中序遍历所得到的序列，就是有序的。
 
 ## 链表：
-### 25(leetcode.Hard): K 个一组翻转链表 （阿里面试）
+### 25(leetcode.Hard): K 个一组翻转链表 （阿里\虾皮面试）
 （递归/链表的反转）
 ### 2(leetcode.medium):两数相加
 放一个数字代表进位
+### 148(leetcode.medium):排序链表
+递归排序三部曲：1，快慢指针找中点；2，递归调用mergeSort，3，合并两个链表
 
 
 单链表和双链表的反转（100%）
@@ -78,3 +85,7 @@ return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 
 ### 3(leetcode.medium):无重复字符的最长子串
 left = Math.max(left,map.get(s.charAt(i)) + 1) :返回字符所对应的索引，当发现重复元素时，窗口左指针右移
 (滑动窗口，拟定左边右边，增加hashmap存储下标与窗口位置的关系，)
+### 1143(leetcode.medium):最长公共子序列
+只要涉及子序列问题，十有八九都需要动态规划来解决。
+dp[i + 1][j + 1] = Math.max(dp[i+1][j], dp[i][j+1]);
+对比的两个字符相同，去找它们前面各退一格的值加1即可：dp[i+1][j+1] = dp[i][j] + 1;
