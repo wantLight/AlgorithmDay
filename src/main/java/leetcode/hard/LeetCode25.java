@@ -24,6 +24,7 @@ public class LeetCode25 {
         int count=0;
         int i=0;
 
+        // 递进看一下是不是有k个结点
         while (S != null && count != k){
             S = S.next;
             count++;

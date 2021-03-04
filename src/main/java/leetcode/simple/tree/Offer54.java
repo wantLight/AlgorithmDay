@@ -13,6 +13,37 @@ import java.util.List;
  */
 public class Offer54 {
 
+    public int kthLargest(TreeNode root, int k) {
+        if ( root == null ){
+            return 0;
+        }
+        List<Integer> list = new ArrayList<>();
+        // Java中是值传递而不是引用传递。
+        // 对于对象来说传递的是引用的一个副本给参数
+        search(root, list);
+        return list.get(k);
+    }
+
+    // 当遍历到了第K大数的时候，就可以停止遍历了，同时，把遍历到节点对应的数保存下来即可。
+    public void search(TreeNode root, List<Integer> list){
+
+        if (root == null){
+            return;
+        }
+        // 左
+        if (root.left != null){
+            search(root.left,list);
+        }
+        // 根
+        list.add(root.val);
+        // 右
+        if (root.right != null){
+            search(root.right,list);
+        }
+
+    }
+
+
     private int ans = 0, count = 0;
     public int kthLargest2(TreeNode root, int k) {
         // clarification:  root == null?   k <= 1?
@@ -33,31 +64,5 @@ public class Offer54 {
 
 
 
-    public int kthLargest(TreeNode root, int k) {
-        if ( root == null ){
-            return 0;
-        }
-        List<Integer> list = new ArrayList<>();
-        // Java中是值传递而不是引用传递。
-        // 对于对象来说传递的是引用的一个副本给参数
-        search(root, list);
-        return list.get(k);
-    }
 
-    // 当遍历到了第K大数的时候，就可以停止遍历了，同时，把遍历到节点对应的数保存下来即可。
-    public void search(TreeNode root, List<Integer> list){
-
-        if (root == null){
-            return;
-        }
-
-        if (root.left != null){
-            search(root.left,list);
-        }
-        list.add(root.val);
-        if (root.right != null){
-            search(root.right,list);
-        }
-
-    }
 }

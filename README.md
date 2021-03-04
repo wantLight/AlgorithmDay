@@ -55,7 +55,6 @@ return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 
 ### 148(leetcode.medium):排序链表
 递归排序三部曲：1，快慢指针找中点；2，递归调用mergeSort，3，合并两个链表
 
-
 单链表和双链表的反转（100%）
 
 ## 数组：
