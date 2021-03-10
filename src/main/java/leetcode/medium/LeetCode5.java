@@ -6,6 +6,41 @@ package leetcode.medium;
  */
 public class LeetCode5 {
 
+
+    // 动态规划
+    public String longestPalindrome2(String s) {
+        int n = s.length();
+        boolean[][] dp = new boolean[n][n];
+        String ans = "";
+        for (int l = 0; l < n; ++l) {
+            for (int i = 0; i + l < n; ++i) {
+                // j = 起始地址 + 现在判断的长度
+                int j = i + l;
+                if (l == 0) {
+                    // 对于长度为 1 的子串，它显然是个回文串；
+                    dp[i][j] = true;
+                } else {
+                    boolean bool = s.charAt(i) == s.charAt(j);
+                    if (l == 1) {
+                        // 对于长度为 2 的子串，只要它的两个字母相同，它就是一个回文串。
+                        dp[i][j] = bool;
+                    } else {
+                        // 对于长度大于 2 的子串，只有 s[i+1:j-1]s[i+1:j−1] 是回文串，并且s 的第 i 和 j 个字母相同时，s[i:j]s[i:j] 才会是回文串。
+                        // 动态规划的状态转移方程。
+                        dp[i][j] = (bool && dp[i + 1][j - 1]);
+                    }
+                }
+
+                // 起始长度+1
+                if (dp[i][j] && l + 1 > ans.length()) {
+                    ans = s.substring(i, j + 1);
+                }
+            }
+        }
+        return ans;
+    }
+
+
     public String longestPalindrome(String s) {
         if (s == null || s.length() == 0) {
             return "";
