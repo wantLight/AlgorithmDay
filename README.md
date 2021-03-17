@@ -7,6 +7,9 @@
 
 **数据结构的存储方式只有两种：数组（顺序存储）和链表（链式存储）。**
 
+#动态规划
+
+
 ## 简单数字
 ### 202(leetcode.simple):快乐数 （快慢指针）
 slow=squareSum(slow);
@@ -31,8 +34,9 @@ fast=squareSum(fast);fast=squareSum(fast);
 （后序遍历，将每个节点最大直径(左子树深度+右子树深度)当前最大值比较并取大者）
 ### 104(leetcode.simple):二叉树最大深度 
 return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
-### 124(leetcode.Hard):二叉树中的最大路径和
-（后序遍历，经过root的单边分支最大和， 即Math.max(root, root+left, root+right)）
+### 124(leetcode.Hard):二叉树中的最大路径和  【后序遍历】
+先算left 、 right 的max(0, oneSideMax(root.xxx));
+（后序遍历，最后得出经过root的单边分支最大和， 即Math.max(root, root+left, root+right)）
 ### 297(leetcode.Hard):二叉树的序列化与反序列化
 （前序遍历，DFS递归遍历一棵树，只需关注当前的根节点就好，它的子树的遍历交给递归完成）
 ### 101(leetcode.simple):对称二叉树
@@ -46,6 +50,10 @@ return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 
 （咋遍历都行，用TreeNode整体保存子树）
 ### Offer(54)二叉搜索树的第k大节点
 二叉搜索树的一个特性：通过中序遍历所得到的序列，就是有序的。
+### Offer(26)二叉搜索树的子树
+先序遍历 + 包含判断
+### 105(leetcode.medium):最大二叉树
+// 思想：前序遍历。   根节点一定是前序的第一个数
 
 ## 链表：
 ### 25(leetcode.Hard): K 个一组翻转链表 （阿里\虾皮面试）
@@ -75,6 +83,9 @@ return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 
 
 ### 15(leetcode.medium): 三数之和 
 (排序+双指针)
+
+### 322(leetcode.medium):零钱兑换
+// F(S)：组成金额 S 所需的最少硬币数量 / 不过是⼀个 N 叉树的遍历问题⽽已
 
 
 

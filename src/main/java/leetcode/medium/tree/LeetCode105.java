@@ -34,6 +34,8 @@ public class LeetCode105 {
                 break;
             }
         }
+        // 思想：前序遍历。
+
         // 根节点一定是前序的第一个数
         TreeNode treeNode = new TreeNode(preVal);
 
